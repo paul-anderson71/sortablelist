@@ -3,8 +3,10 @@ class SortableList:
         self.array = list(original_list)
 
     def swap(self, i, j):
-        self.array[i], self.array[j] = self.array[j], self.array[i]
-
+        temp = self.array[i]
+        self.array[i] = self.array[j] 
+        self.array[j] = temp
+        
     def __min__(self):
         minval = self.array[0]
         for i in range(len(self.array)):
