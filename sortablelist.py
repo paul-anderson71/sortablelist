@@ -71,7 +71,15 @@ class SortableList:
         return self.array 
 
     def selection_sort(self):
-        # TODO: selection sort self.array
+        num_sorted = 0
+        while num_sorted < len(self.array):
+            index_smallest = num_sorted
+            for i in range(num_sorted, len(self.array)):
+                if self.array[i]<self.array[index_smallest]:
+                    index_smallest = i
+            
+            self.swap(index_smallest, num_sorted)
+            num_sorted += 1
         return
 
     def insertion_sort(self):
@@ -141,7 +149,7 @@ class SortableList:
 
 # Testing the class
 if __name__ == "__main__":
-    mode = "TESTING"
+    mode = "TIMING"
     
     if mode == "TESTING":
         example_list = [35, 65, 92, 15, 14, 3, 35, 65, 92, 15, 14, 3]
