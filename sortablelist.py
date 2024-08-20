@@ -6,12 +6,20 @@ class SortableList:
         self.array[i], self.array[j] = self.array[j], self.array[i]
 
     def __min__(self):
-        # TODO: find smallest value in self.array (no built-ins!)
-        return
+        minval = self.array[0]
+        for i in range(len(self.array)):
+            x = self.array[i]
+            if minval > x:
+                minval = x
+        return minval
 
     def __max__(self):
-        # TODO: find largest value in self.array (no built-ins!)
-        return
+        maxval = self.array[0]
+        for i in range(len(self.array)):
+            x = self.array[i]
+            if maxval < x:
+                maxval = x
+        return maxval
 
     def __sum__(self):
             val = 0
@@ -22,8 +30,13 @@ class SortableList:
 
 
     def linear_search(self, value):
-        # TODO: find the index at which value appears (or None)
-        return
+        i = 0
+        while i < len(self.array):
+            if self.array[i] == value:
+                return i
+            else:
+                i = i + 1
+        return None
 
     def binary_search(self, value):
         # TODO: find the index at which value appears (or None)
