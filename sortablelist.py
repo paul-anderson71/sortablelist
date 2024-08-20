@@ -60,7 +60,6 @@ class SortableList:
         return 
 
     def bubble_sort(self):
-        # TODO: bubble sort self.array
         num_swaps = 1
         while num_swaps > 0:
             num_swaps = 0
