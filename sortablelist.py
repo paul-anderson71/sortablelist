@@ -61,7 +61,14 @@ class SortableList:
 
     def bubble_sort(self):
         # TODO: bubble sort self.array
-        return
+        num_swaps = 1
+        while num_swaps > 0:
+            num_swaps = 0
+            for i in range(0, len(self.array) - 1):
+                if self.array[i]>self.array[i + 1]:
+                    self.swap(i, i + 1)
+                    num_swaps = num_swaps + 1
+        return self.array 
 
     def selection_sort(self):
         # TODO: selection sort self.array
