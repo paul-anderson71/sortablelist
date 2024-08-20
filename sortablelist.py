@@ -39,9 +39,26 @@ class SortableList:
         return None
 
     def binary_search(self, value):
-        # TODO: find the index at which value appears (or None)
         assert self.array == sorted(self.array)
-        return
+        smallest = 0
+        largest = len(self.array) - 1
+        middle = (largest+smallest) // 2#round down to whole number
+
+        while largest>=smallest:
+            if self.array[middle]==value:
+                return middle
+            if self.array[middle]>value:
+                largest = middle - 1
+            else :
+                smallest = middle + 1
+            middle = (largest+smallest) // 2 
+        return None
+
+    def bogo_sort(self):
+        import random
+        while self.array!=sorted(self.array):
+            random.shuffle(self.array)
+        return 
 
     def bubble_sort(self):
         # TODO: bubble sort self.array
