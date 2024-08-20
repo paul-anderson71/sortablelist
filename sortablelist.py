@@ -23,10 +23,9 @@ class SortableList:
 
     def __sum__(self):
             val = 0
-            for i in len(self.array): 
-                val = i + val
-            return
-            return
+            for i in range(len(self.array)): 
+                val = self.array[i] + val
+            return val
 
 
     def linear_search(self, value):
