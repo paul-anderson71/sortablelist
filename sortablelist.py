@@ -83,8 +83,17 @@ class SortableList:
         return
 
     def insertion_sort(self):
-        # TODO: insertion sort self.array
-        return
+        
+        numsorted = 0
+        
+        while numsorted < len(self.array):
+            i = numsorted
+            # we swap the item at [i] to the left
+            while i > 0 and self.array[i] < self.array[i - 1]:            
+                    self.swap(i, i - 1)
+                    i-=1 
+            numsorted += 1
+        return 
 
     def quick_sort(self):
         def quick_sort_rec(i_first, i_last):
